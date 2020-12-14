@@ -1,0 +1,125 @@
+{smcl}
+{com}{sf}{ul off}{txt}{.-}
+      name:  {res}<unnamed>
+       {txt}log:  {res}/Users/Cho/Desktop/TP/untitled folder/1997/1997 Data.smcl
+  {txt}log type:  {res}smcl
+ {txt}opened on:  {res}14 Nov 2018, 00:11:58
+
+{com}. do "/Users/Cho/Desktop/TP/untitled folder/1997/Do File 1997.do"
+{txt}
+{com}. drop if countryname > countryname[171952] | countryname < countryname[165752]
+{txt}(274,226 observations deleted)
+
+{com}. drop if year > 2000
+{txt}(12,063 observations deleted)
+
+{com}. 
+. 
+. drop if year != 1997
+{txt}(5,096 observations deleted)
+
+{com}. 
+. 
+. regress trustprez income 
+
+{txt}      Source {c |}       SS           df       MS      Number of obs   ={res}     1,091
+{txt}{hline 13}{c +}{hline 34}   F(1, 1089)      = {res}    13.58
+{txt}       Model {c |} {res} 10.7705691         1  10.7705691   {txt}Prob > F        ={res}    0.0002
+{txt}    Residual {c |} {res} 863.761053     1,089  .793169011   {txt}R-squared       ={res}    0.0123
+{txt}{hline 13}{c +}{hline 34}   Adj R-squared   ={res}    0.0114
+{txt}       Total {c |} {res} 874.531622     1,090  .802322589   {txt}Root MSE        =   {res}  .8906
+
+{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1}   trustprez{col 14}{c |}      Coef.{col 26}   Std. Err.{col 38}      t{col 46}   P>|t|{col 54}     [95% Con{col 67}f. Interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 6}income {c |}{col 14}{res}{space 2} .1263529{col 26}{space 2} .0342885{col 37}{space 1}    3.68{col 46}{space 3}0.000{col 54}{space 4} .0590738{col 67}{space 3} .1936319
+{txt}{space 7}_cons {c |}{col 14}{res}{space 2}  1.88661{col 26}{space 2} .0958312{col 37}{space 1}   19.69{col 46}{space 3}0.000{col 54}{space 4} 1.698575{col 67}{space 3} 2.074645
+{txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{res}{txt}
+{com}. regress trustprez income age
+
+{txt}      Source {c |}       SS           df       MS      Number of obs   ={res}     1,091
+{txt}{hline 13}{c +}{hline 34}   F(2, 1088)      = {res}     7.18
+{txt}       Model {c |} {res} 11.3923271         2  5.69616354   {txt}Prob > F        ={res}    0.0008
+{txt}    Residual {c |} {res} 863.139295     1,088  .793326558   {txt}R-squared       ={res}    0.0130
+{txt}{hline 13}{c +}{hline 34}   Adj R-squared   ={res}    0.0112
+{txt}       Total {c |} {res} 874.531622     1,090  .802322589   {txt}Root MSE        =   {res} .89069
+
+{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1}   trustprez{col 14}{c |}      Coef.{col 26}   Std. Err.{col 38}      t{col 46}   P>|t|{col 54}     [95% Con{col 67}f. Interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 6}income {c |}{col 14}{res}{space 2} .1241017{col 26}{space 2} .0343861{col 37}{space 1}    3.61{col 46}{space 3}0.000{col 54}{space 4} .0566312{col 67}{space 3} .1915722
+{txt}{space 9}age {c |}{col 14}{res}{space 2}-.0020467{col 26}{space 2} .0023119{col 37}{space 1}   -0.89{col 46}{space 3}0.376{col 54}{space 4}-.0065831{col 67}{space 3} .0024896
+{txt}{space 7}_cons {c |}{col 14}{res}{space 2} 1.965103{col 26}{space 2} .1305631{col 37}{space 1}   15.05{col 46}{space 3}0.000{col 54}{space 4} 1.708919{col 67}{space 3} 2.221287
+{txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{res}{txt}
+{com}. regress trustprez income age educ 
+
+{txt}      Source {c |}       SS           df       MS      Number of obs   ={res}     1,064
+{txt}{hline 13}{c +}{hline 34}   F(3, 1060)      = {res}     5.26
+{txt}       Model {c |} {res}  12.508496         3  4.16949867   {txt}Prob > F        ={res}    0.0013
+{txt}    Residual {c |} {res} 840.029098     1,060  .792480281   {txt}R-squared       ={res}    0.0147
+{txt}{hline 13}{c +}{hline 34}   Adj R-squared   ={res}    0.0119
+{txt}       Total {c |} {res} 852.537594     1,063  .802010907   {txt}Root MSE        =   {res} .89021
+
+{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1}   trustprez{col 14}{c |}      Coef.{col 26}   Std. Err.{col 38}      t{col 46}   P>|t|{col 54}     [95% Con{col 67}f. Interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 6}income {c |}{col 14}{res}{space 2} .1315624{col 26}{space 2} .0348062{col 37}{space 1}    3.78{col 46}{space 3}0.000{col 54}{space 4} .0632654{col 67}{space 3} .1998593
+{txt}{space 9}age {c |}{col 14}{res}{space 2}-.0021576{col 26}{space 2} .0023442{col 37}{space 1}   -0.92{col 46}{space 3}0.358{col 54}{space 4}-.0067574{col 67}{space 3} .0024422
+{txt}{space 8}educ {c |}{col 14}{res}{space 2}-.0030152{col 26}{space 2} .0974038{col 37}{space 1}   -0.03{col 46}{space 3}0.975{col 54}{space 4}-.1941412{col 67}{space 3} .1881109
+{txt}{space 7}_cons {c |}{col 14}{res}{space 2}  1.94309{col 26}{space 2} .1319713{col 37}{space 1}   14.72{col 46}{space 3}0.000{col 54}{space 4} 1.684136{col 67}{space 3} 2.202045
+{txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{res}{txt}
+{com}. regress trustprez income age educ female 
+
+{txt}      Source {c |}       SS           df       MS      Number of obs   ={res}     1,064
+{txt}{hline 13}{c +}{hline 34}   F(4, 1059)      = {res}     4.21
+{txt}       Model {c |} {res} 13.3370704         4   3.3342676   {txt}Prob > F        ={res}    0.0022
+{txt}    Residual {c |} {res} 839.200524     1,059  .792446198   {txt}R-squared       ={res}    0.0156
+{txt}{hline 13}{c +}{hline 34}   Adj R-squared   ={res}    0.0119
+{txt}       Total {c |} {res} 852.537594     1,063  .802010907   {txt}Root MSE        =   {res} .89019
+
+{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1}   trustprez{col 14}{c |}      Coef.{col 26}   Std. Err.{col 38}      t{col 46}   P>|t|{col 54}     [95% Con{col 67}f. Interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 6}income {c |}{col 14}{res}{space 2} .1321749{col 26}{space 2} .0348107{col 37}{space 1}    3.80{col 46}{space 3}0.000{col 54}{space 4} .0638692{col 67}{space 3} .2004806
+{txt}{space 9}age {c |}{col 14}{res}{space 2}-.0023092{col 26}{space 2} .0023488{col 37}{space 1}   -0.98{col 46}{space 3}0.326{col 54}{space 4}-.0069181{col 67}{space 3} .0022997
+{txt}{space 8}educ {c |}{col 14}{res}{space 2}-.0086825{col 26}{space 2} .0975592{col 37}{space 1}   -0.09{col 46}{space 3}0.929{col 54}{space 4}-.2001139{col 67}{space 3} .1827488
+{txt}{space 6}female {c |}{col 14}{res}{space 2}-.0560311{col 26}{space 2}  .054796{col 37}{space 1}   -1.02{col 46}{space 3}0.307{col 54}{space 4}-.1635521{col 67}{space 3} .0514899
+{txt}{space 7}_cons {c |}{col 14}{res}{space 2} 1.975047{col 26}{space 2} .1356186{col 37}{space 1}   14.56{col 46}{space 3}0.000{col 54}{space 4} 1.708936{col 67}{space 3} 2.241159
+{txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{res}{txt}
+{com}. regress trustprez income age educ female efficacy 
+
+{txt}      Source {c |}       SS           df       MS      Number of obs   ={res}     1,054
+{txt}{hline 13}{c +}{hline 34}   F(5, 1048)      = {res}     4.22
+{txt}       Model {c |} {res} 16.6977069         5  3.33954138   {txt}Prob > F        ={res}    0.0008
+{txt}    Residual {c |} {res} 829.351629     1,048  .791366058   {txt}R-squared       ={res}    0.0197
+{txt}{hline 13}{c +}{hline 34}   Adj R-squared   ={res}    0.0151
+{txt}       Total {c |} {res} 846.049336     1,053  .803465656   {txt}Root MSE        =   {res} .88959
+
+{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1}   trustprez{col 14}{c |}      Coef.{col 26}   Std. Err.{col 38}      t{col 46}   P>|t|{col 54}     [95% Con{col 67}f. Interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 6}income {c |}{col 14}{res}{space 2}  .131707{col 26}{space 2} .0349605{col 37}{space 1}    3.77{col 46}{space 3}0.000{col 54}{space 4} .0631064{col 67}{space 3} .2003075
+{txt}{space 9}age {c |}{col 14}{res}{space 2}-.0019684{col 26}{space 2} .0023597{col 37}{space 1}   -0.83{col 46}{space 3}0.404{col 54}{space 4}-.0065987{col 67}{space 3} .0026618
+{txt}{space 8}educ {c |}{col 14}{res}{space 2}-.0110438{col 26}{space 2} .0975443{col 37}{space 1}   -0.11{col 46}{space 3}0.910{col 54}{space 4}-.2024482{col 67}{space 3} .1803606
+{txt}{space 6}female {c |}{col 14}{res}{space 2}-.0580185{col 26}{space 2} .0550414{col 37}{space 1}   -1.05{col 46}{space 3}0.292{col 54}{space 4}-.1660225{col 67}{space 3} .0499854
+{txt}{space 4}efficacy {c |}{col 14}{res}{space 2} .1211682{col 26}{space 2} .0557929{col 37}{space 1}    2.17{col 46}{space 3}0.030{col 54}{space 4} .0116897{col 67}{space 3} .2306466
+{txt}{space 7}_cons {c |}{col 14}{res}{space 2} 1.896036{col 26}{space 2} .1416449{col 37}{space 1}   13.39{col 46}{space 3}0.000{col 54}{space 4} 1.618096{col 67}{space 3} 2.173976
+{txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{res}{txt}
+{com}. 
+{txt}end of do-file
+
+{com}. use "/Users/Cho/Desktop/TP/untitled folder/Data for Carlin and Singh, Executive Power and Economic Accountability, JOP.dta", clear
+
+. log close
+      {txt}name:  {res}<unnamed>
+       {txt}log:  {res}/Users/Cho/Desktop/TP/untitled folder/1997/1997 Data.smcl
+  {txt}log type:  {res}smcl
+ {txt}closed on:  {res}14 Nov 2018, 00:12:26
+{txt}{.-}
+{smcl}
+{txt}{sf}{ul off}
